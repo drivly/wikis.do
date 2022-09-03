@@ -31,13 +31,14 @@ router.get('/:id', withParams, async (req, env) => {
   const infoboxes = camelcaseKeys(article?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
   
   const data = infoboxes?.map(infobox => Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{})) ?? article
-    
+  const tables = doc?.tables()
+  const templates = doc?.templates()
   const links = doc?.links().reduce((acc,l) => ({...acc, [l.page()]: 'https://wikis.do/' + l.page()}),{})
   const text = doc?.text()
 //   const markdown = doc.markdown()
   const categories = doc?.categories().reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{})
   
-  return json({api, title: decodeURI(id), data, categories, links, user })
+  return json({api, title: decodeURI(id), data, categories, links, tables, templates, user })
 })
 
 export default {
