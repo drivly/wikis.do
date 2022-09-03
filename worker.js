@@ -29,6 +29,8 @@ router.get('/:id', withParams, async ({id,user}) => {
   
   const infoboxes = Object.keys(infobox).map(key => infobox[key].links = infobox[key].links?.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}))
   
+  const infoboxKeys = Object.keys(infobox)
+  
   const links = doc?.links()
   const text = doc?.text()
 //   const markdown = doc.markdown()
