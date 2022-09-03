@@ -2,6 +2,8 @@ import { Router } from 'itty-router'
 import { json } from 'itty-router-extras'
 import wtf from 'wtf_wikipedia'
 
+const router = Router()
+
 router.any('*', async (req, env, ctx) => {
   req.ctx = await env.CTX.fetch(req).then(res => res.json())
 })
