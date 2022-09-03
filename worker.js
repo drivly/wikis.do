@@ -25,11 +25,11 @@ router.any('*', async (req, env, ctx) => {
 router.get('/:id', withParams, async ({id,ctx:{user}}) => {
   const doc = await wtf.fetch(decodeURI(id), 'en')
   const data = doc?.json()
-  const infobox = camelcaseKeys(data?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
+  const infoboxes = camelcaseKeys(data?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
   
-  const infoboxes = infobox ? Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{}) : undefined
+  const infobox = infoboxes.map(infobox => Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{}))
   
-  const infoboxKeys = infobox ? Object.keys(infobox) : undefined
+  const infoboxKeys = infobox ? Object.keys(infobox[0]) : undefined
   
   const links = doc?.links()
   const text = doc?.text()
