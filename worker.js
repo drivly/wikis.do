@@ -27,16 +27,16 @@ router.get('/:id', withParams, async ({id,user}) => {
   const data = doc?.json()
   const infobox = camelcaseKeys(data?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
   
-  const infoboxes = Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{})
+  const infoboxes = infobox ? Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{}) : undefined
   
-  const infoboxKeys = Object.keys(infobox)
+  const infoboxKeys = infobox ? Object.keys(infobox) : undefined
   
   const links = doc?.links()
   const text = doc?.text()
 //   const markdown = doc.markdown()
   const categories = doc?.categories().reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{})
   
-  return json({api, categories, infoboxes, user, infobox, data, links, text})
+  return json({api, categories, infoboxKeys, infoboxes, user, infobox, data, links, text})
 })
 
 export default {
