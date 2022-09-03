@@ -1,4 +1,4 @@
 # wikis.do
 Wikipedia Infobox and Content Parsing API
 
-<https://wikis.do/api>
+<https://wikis.do/Porsche>
