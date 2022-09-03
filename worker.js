@@ -23,7 +23,8 @@ const api = {
 //   req.user = user
 // })
 
-router.get('/:id', withParams, async ({id}, env) => {
+router.get('/:id', withParams, async (req, env) => {
+  const {id} = req
   const {user} = await env.CTX.fetch(req).then(res => res.json())
   const doc = await wtf.fetch(decodeURI(id), 'en')
   const article = doc?.json()
@@ -36,7 +37,7 @@ router.get('/:id', withParams, async ({id}, env) => {
 //   const markdown = doc.markdown()
   const categories = doc?.categories().reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{})
   
-  return json({api, data, categories, links, user, })
+  return json({api, data, categories, links, user })
 })
 
 export default {
