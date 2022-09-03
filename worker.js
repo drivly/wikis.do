@@ -23,7 +23,9 @@ router.get('/:id', withParams, async ({id}) => {
 //   const markdown = doc.markdown()
   const categories = doc.categories().reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{})
   
-  return json({categories, infoboxes, infobox, data, links, text})
+  const { user } = req.ctx
+  
+  return json({categories, infoboxes, user, infobox, data, links, text})
 })
 
 export default {
