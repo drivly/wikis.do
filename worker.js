@@ -31,7 +31,8 @@ router.get('/:id', withParams, async (req, env) => {
   const infoboxes = camelcaseKeys(article?.sections[0]?.infoboxes, { deep: true }) 
 //   const infoboxes = doc?.infoboxes().map(infobox => camelcaseKeys(infobox.json(), { deep: true }))
   
-  const data = infoboxes?.map(infobox => Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{})) ?? article
+//   const data = infoboxes?.map(infobox => Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{})) ?? article
+  const data = Object.entries(infoboxes[0]).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{}) ?? article
   const tables = doc?.tables().map(table => table.keyValue())
   const templates = doc?.templates().map(template => template.json())
   const links = doc?.links().reduce((acc,l) => ({...acc, [l.page()]: 'https://wikis.do/' + l.page()}),{})
