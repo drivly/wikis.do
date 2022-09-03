@@ -13,7 +13,7 @@ router.get('/:id', withParams, async ({id}) => {
   const infobox = doc.infobox()
   const links = doc.links()
   const text = doc.text()
-  const markdown = doc.markdown()
+//   const markdown = doc.markdown()
   const categories = doc.categories()
   
   return json({infobox, links, text, markdown, categories})
