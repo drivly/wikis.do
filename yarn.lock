@@ -96,6 +96,15 @@ color-name@1.1.3:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
   integrity sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==
 
+compromise@14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/compromise/-/compromise-14.0.0.tgz#4d4b766494906e7fad645ed1ea8b2aa109bffb94"
+  integrity sha512-//uDMAfHPKygivhYG1+6kSaugS0FbuUWVuwCAtI8FR2AQVa6AWNbOBph/Qzx2to1anRoYvmN1VG2lN8VN6hTOg==
+  dependencies:
+    efrt "2.5.0"
+    grad-school "0.0.4"
+    suffix-thumb "4.0.2"
+
 decamelize-keys@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/decamelize-keys/-/decamelize-keys-1.1.0.tgz#d171a87933252807eb3cb61dc1c1445d078df2d9"
@@ -113,6 +122,11 @@ decamelize@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-5.0.1.tgz#db11a92e58c741ef339fb0a2868d8a06a9a7b1e9"
   integrity sha512-VfxadyCECXgQlkoEAjeghAr5gY3Hf+IKjKb+X8tGVDtveCjN+USwprd2q3QXBR9T1+x2DG0XZF5/w+7HAtSaXA==
+
+efrt@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/efrt/-/efrt-2.5.0.tgz#94447af614a31f4cb7459ce9574b96fcaef4ca92"
+  integrity sha512-V/tJRLSD3sbd1hOw2TVvMLeQnLZeH9STMoUg649M6Zufb9Xabho+nkORxORu1SiCX5hh4e7yhRbcwAUIdXwLOQ==
 
 error-ex@^1.3.1:
   version "1.3.2"
@@ -138,6 +152,11 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+
+grad-school@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/grad-school/-/grad-school-0.0.4.tgz#c0d478f2fbfc5601b5061a4859c054cb6a8aaa04"
+  integrity sha512-wIaLSmqqMNiNJGMUq45jokvb+pTW0xe52k1+iY5aQgGNVM9xf1OpWuIDqHxxSqlRf/nqt0D/NIpj61+2z87q+g==
 
 hard-rejection@^2.1.0:
   version "2.1.0"
@@ -387,6 +406,11 @@ slow@^1.1.0:
   resolved "https://registry.yarnpkg.com/slow/-/slow-1.1.0.tgz#78fb24363acc4fc2de1cc63342d06dbc2d794373"
   integrity sha512-NEPfKulZIDhCsEccS23VXE7nfhBhAAPMcYmbry3YZTk50buXGLNm1vsfeIWy+EdOyU/fk+6usnf1zCxPCNJ4Rg==
 
+spacetime@7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/spacetime/-/spacetime-7.1.2.tgz#73a94f0ba7f0c0b2230259b5ccf78dd9fd34cd16"
+  integrity sha512-MUTgK9KU9gMXhZddwe0nlgFnCJXT4RfuIRqyo8VcUexZa94zkxk1WpVv3THgvMFz1+Hq9okoNiGTvj6qBdN4Cg==
+
 spdx-correct@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/spdx-correct/-/spdx-correct-3.1.1.tgz#dece81ac9c1e6713e5f7d1b6f17d468fa53d89a9"
@@ -419,6 +443,11 @@ strip-indent@^4.0.0:
   integrity sha512-mnVSV2l+Zv6BLpSD/8V87CW/y9EmmbYzGCIavsnsI6/nwn26DwffM/yztm30Z/I2DY9wdS3vXVCMnHDgZaVNoA==
   dependencies:
     min-indent "^1.0.1"
+
+suffix-thumb@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/suffix-thumb/-/suffix-thumb-4.0.2.tgz#9303c1be8252bf79d9c57e5737d7d849d1f6abc9"
+  integrity sha512-CCvCAr7JyeQoO+/lyq3P2foZI/xJz5kpG3L6kg2CaOf9K2/gaM9ixy/JTuRwjEK38l306zE7vl3JoOZYmLQLlA==
 
 supports-color@^5.3.0:
   version "5.5.0"
@@ -480,10 +509,40 @@ wtf-plugin-api@^1.0.1:
   dependencies:
     slow "^1.1.0"
 
+wtf-plugin-classify@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/wtf-plugin-classify/-/wtf-plugin-classify-2.0.0.tgz#c7c03fff0485eb682e00edc812133c48677990f1"
+  integrity sha512-HiWrFKveE0oVihgWi/DcFLixmTpZFyjmDnLmXrAi0BRiQcYnho81ctWg0wLTcmWT+tg7GzOd8hLxlcNFsgBjmg==
+
 wtf-plugin-image@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/wtf-plugin-image/-/wtf-plugin-image-1.1.0.tgz#fc34d7e31d498b5033b1de1eee9ed9a24af0778c"
   integrity sha512-895wOLk20JqOmYrg4abJiWKbQUCfwMFXGrxUJk/aRCgsX/u8+02hOmqUlbBq6sxMTT2a4WrhEgCjFsV70ay+Gg==
+
+wtf-plugin-person@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/wtf-plugin-person/-/wtf-plugin-person-1.0.0.tgz#8bb0de3a01429aad39fe29f2e0367ed636105a1e"
+  integrity sha512-DFCnabnYdtYYKILgijvdtuWH5MhwEU8nRI7Qawi5kD5bAzWDTHO+qGUgmdBwgthI84h3eyJAX1d0u8xoi2i/8Q==
+  dependencies:
+    compromise "14.0.0"
+    spacetime "7.1.2"
+
+wtf-plugin-sports@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/wtf-plugin-sports/-/wtf-plugin-sports-0.0.2.tgz#573e96aef9dbec01319561cfa97e303fd2f77911"
+  integrity sha512-wWevO3TSdklkmu0j3Zr0IF/JBpqzh443qbI0DvUVro9wMn7laA66L569q7o+Uz20Jsz/Qug7q2GfRstEEdjmiA==
+
+wtf-plugin-summary@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/wtf-plugin-summary/-/wtf-plugin-summary-1.0.0.tgz#327dfe8bc7f55ca7747589bfc9c6e49443fd16cf"
+  integrity sha512-R8VtfZ2Aup/vmhAOXfNYyU17cSxqSghTNA6O6ffk5S0v7pow9JJSIshV0rJQVB2ETiyyJJ/vKlbdCEn+HStXbQ==
+  dependencies:
+    compromise "14.0.0"
+
+wtf-plugin-wikinews@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/wtf-plugin-wikinews/-/wtf-plugin-wikinews-0.1.0.tgz#9d6271c4149bcea3593c4b3a3c69ef1a856a2804"
+  integrity sha512-l/58eLZ9g77MFfoYw+Dv3ThLp9yZDHCcnQaM+Ol4+ksAwHZdvPwGA1rOJBlYUF+z51OP0wOhzDW1LXrcg8C9HA==
 
 wtf_wikipedia@^10.0.2:
   version "10.0.2"

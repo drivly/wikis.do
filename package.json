@@ -4,7 +4,12 @@
     "itty-router": "^2.6.1",
     "itty-router-extras": "^0.4.2",
     "wtf-plugin-api": "^1.0.1",
+    "wtf-plugin-classify": "^2.0.0",
     "wtf-plugin-image": "^1.1.0",
+    "wtf-plugin-person": "^1.0.0",
+    "wtf-plugin-sports": "^0.0.2",
+    "wtf-plugin-summary": "^1.0.0",
+    "wtf-plugin-wikinews": "^0.1.0",
     "wtf_wikipedia": "^10.0.2"
   }
 }
