@@ -10,13 +10,14 @@ router.any('*', async (req, env, ctx) => {
 
 router.get('/:id', withParams, async ({id}) => {
   const doc = await wtf.fetch(id, 'en')
+  const data = doc.json()
   const infobox = doc.infobox()
   const links = doc.links()
   const text = doc.text()
 //   const markdown = doc.markdown()
   const categories = doc.categories()
   
-  return json({infobox, links, text, categories})
+  return json({data, infobox, links, text, categories})
 })
 
 export default {
