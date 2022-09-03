@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "camelcase-keys": "^8.0.2"
     "wtf_wikipedia": "^10.0.2" 
   }
 }
