@@ -19,10 +19,11 @@ const api = {
 }
 
 router.any('*', async (req, env, ctx) => {
-  req.ctx = await env.CTX.fetch(req).then(res => res.json())
+  const {user} = await env.CTX.fetch(req).then(res => res.json())
+  req.user = user
 })
 
-router.get('/:id', withParams, async ({id,ctx:{user}}) => {
+router.get('/:id', withParams, async ({id,user}) => {
   const doc = await wtf.fetch(decodeURI(id), 'en')
   const data = doc?.json()
   const infoboxes = camelcaseKeys(data?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
