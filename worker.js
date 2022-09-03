@@ -23,7 +23,7 @@ router.any('*', async (req, env, ctx) => {
 })
 
 router.get('/:id', withParams, async ({id,user}) => {
-  const doc = await wtf.fetch(id.replace('%20', '_').replace(' ', '_').replace('+','_'), 'en')
+  const doc = await wtf.fetch(decodeURI(id), 'en')
   const data = doc?.json()
   const infobox = camelcaseKeys(data?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
   
