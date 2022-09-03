@@ -1,1 +1,5 @@
-
+{
+  "dependencies": {
+    "wtf_wikipedia": "^10.0.2" 
+  }
+}
