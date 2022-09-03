@@ -3,7 +3,7 @@ import { json } from 'itty-router-extras'
 import wtf from 'wtf_wikipedia'
 
 router.any('*', async (req, env, ctx) => {
-  req.ctx = await this.env.CTX.fetch(req).then(res => res.json())
+  req.ctx = await env.CTX.fetch(req).then(res => res.json())
 })
 
 router.get('/', async (req, env, ctx) => {
