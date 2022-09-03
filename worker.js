@@ -1,6 +1,7 @@
 import { Router } from 'itty-router'
 import { json, withParams } from 'itty-router-extras'
 import wtf from 'wtf_wikipedia'
+import camelcaseKeys from 'camelcase-keys'
 
 const router = Router()
 
@@ -11,7 +12,7 @@ router.any('*', async (req, env, ctx) => {
 router.get('/:id', withParams, async ({id}) => {
   const doc = await wtf.fetch(id.replace('%20', '_').replace(' ', '_').replace('+','_'), 'en')
   const data = doc.json()
-  const infobox = data.sections[0].infoboxes //doc.infoboxes()
+  const infobox = camelcaseKeys(data.sections[0].infoboxes, { deep: true }) //doc.infoboxes()
   
  
   
