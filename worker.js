@@ -11,7 +11,10 @@ router.any('*', async (req, env, ctx) => {
 router.get('/:id', withParams, async ({id}) => {
   const doc = await wtf.fetch(id.replace('%20', '_').replace(' ', '_').replace('+','_'), 'en')
   const data = doc.json()
-  const infobox = doc.infoboxes()
+  const infobox = data.sections[0].infoboxes //doc.infoboxes()
+  
+ 
+  
   const links = doc.links()
   const text = doc.text()
 //   const markdown = doc.markdown()
