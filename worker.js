@@ -4,7 +4,7 @@ import wtf from 'wtf_wikipedia'
 
 router.any('*', async (req, env, ctx) => {
   req.ctx = await this.env.CTX.fetch(req).then(res => res.json())
-}
+})
 
 router.get('/', async (req, env, ctx) => {
   data = await wtf.fetch('Tony Hawk', 'en')
