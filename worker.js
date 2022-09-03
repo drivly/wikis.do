@@ -23,7 +23,7 @@ router.any('*', async (req, env, ctx) => {
   req.user = user
 })
 
-router.get('/:id', withParams, async ({id,user}) => {
+router.get('/:id', withParams, async ({id,user}, env) => {
   const doc = await wtf.fetch(decodeURI(id), 'en')
   const article = doc?.json()
   const infoboxes = camelcaseKeys(article?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
