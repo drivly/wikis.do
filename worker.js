@@ -14,7 +14,7 @@ const api = {
   endpoints: {
     data: 'https://wikis.do/:topic',
   },
-  type: 'https://apis.do',
+  type: 'https://apis.do/knowledge',
   repo: 'https://github.com/drivly/wikis.do',
 }
 
