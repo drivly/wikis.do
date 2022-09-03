@@ -6,7 +6,7 @@ import camelcaseKeys from 'camelcase-keys'
 const router = Router()
 
 const api = {
-  icon: 'ılıl',
+  icon: '🪄✨',
   name: 'wikis.do',
   description: 'Wikipedia Metadata API',
   url: 'https://wikis.do',
