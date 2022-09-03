@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "camelcase-keys": "^8.0.2"
+    "camelcase-keys": "^8.0.2",
+    "itty-router": "^2.6.1",
+    "itty-router-extras": "^0.4.2",
     "wtf_wikipedia": "^10.0.2" 
   }
 }
