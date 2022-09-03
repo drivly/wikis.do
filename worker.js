@@ -8,7 +8,7 @@ const router = Router()
 const api = {
   icon: '🪄✨',
   name: 'wikis.do',
-  description: 'Wikipedia Metadata API',
+  description: 'Wiki Data',
   url: 'https://wikis.do',
   api: 'https://wikis.do/api',
   endpoints: {
