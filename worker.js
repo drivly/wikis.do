@@ -27,7 +27,7 @@ router.get('/:id', withParams, async ({id,user}) => {
   const data = doc?.json()
   const infobox = camelcaseKeys(data?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
   
-  const infoboxes = Object.keys(infobox).reduce((obj,key) => ({ ...obj, [key]: infobox[key].links?.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{})}),{})
+  const infoboxes = Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{})
   
   const infoboxKeys = Object.keys(infobox)
   
