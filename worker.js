@@ -9,7 +9,7 @@ router.any('*', async (req, env, ctx) => {
 })
 
 router.get('/:id', withParams, async ({id}) => {
-  const doc = await wtf.fetch(id, 'en')
+  const doc = await wtf.fetch(id.replace(' ', '_').replace('+','_'), 'en')
   const data = doc.json()
   const infobox = doc.infoboxes()
   const links = doc.links()
