@@ -18,12 +18,13 @@ const api = {
   repo: 'https://github.com/drivly/wikis.do',
 }
 
-router.any('*', async (req, env, ctx) => {
-  const {user} = await env.CTX.fetch(req).then(res => res.json())
-  req.user = user
-})
+// router.any('*', async (req, env, ctx) => {
+//   const {user} = await env.CTX.fetch(req).then(res => res.json())
+//   req.user = user
+// })
 
-router.get('/:id', withParams, async ({id,user}, env) => {
+router.get('/:id', withParams, async ({id}, env) => {
+  const {user} = await env.CTX.fetch(req).then(res => res.json())
   const doc = await wtf.fetch(decodeURI(id), 'en')
   const article = doc?.json()
   const infoboxes = camelcaseKeys(article?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
