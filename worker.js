@@ -9,7 +9,7 @@ router.any('*', async (req, env, ctx) => {
   req.ctx = await env.CTX.fetch(req).then(res => res.json())
 })
 
-router.get('/:id', withParams, async ({id}) => {
+router.get('/:id', withParams, async ({id,user}) => {
   const doc = await wtf.fetch(id.replace('%20', '_').replace(' ', '_').replace('+','_'), 'en')
   const data = doc?.json()
   const infobox = camelcaseKeys(data.sections[0].infoboxes, { deep: true }) //doc.infoboxes()
@@ -22,8 +22,6 @@ router.get('/:id', withParams, async ({id}) => {
   const text = doc?.text()
 //   const markdown = doc.markdown()
   const categories = doc.categories()?.reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{})
-  
-  const { user } = req.ctx
   
   return json({categories, infoboxes, user, infobox, data, links, text})
 })
