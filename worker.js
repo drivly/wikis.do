@@ -16,7 +16,7 @@ router.get('/:id', withParams, async ({id}) => {
 //   const markdown = doc.markdown()
   const categories = doc.categories()
   
-  return json({infobox, links, text, markdown, categories})
+  return json({infobox, links, text, categories})
 })
 
 export default {
