@@ -5,6 +5,19 @@ import camelcaseKeys from 'camelcase-keys'
 
 const router = Router()
 
+const api = {
+  icon: 'ılıl',
+  name: 'wikis.do',
+  description: 'Wikipedia Metadata API',
+  url: 'https://wikis.do',
+  api: 'https://wikis.do/api',
+  endpoints: {
+    data: origin + '/:topic',
+  },
+  type: 'https://apis.do',
+  repo: 'https://github.com/drivly/wikis.do',
+}
+
 router.any('*', async (req, env, ctx) => {
   req.ctx = await env.CTX.fetch(req).then(res => res.json())
 })
