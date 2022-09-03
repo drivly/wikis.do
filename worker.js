@@ -21,7 +21,7 @@ router.get('/:id', withParams, async ({id}) => {
   const links = doc.links()
   const text = doc.text()
 //   const markdown = doc.markdown()
-  const categories = doc.categories().reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{}))
+  const categories = doc.categories().reduce((acc, val) => ({...acc, [val]: 'https://wikis.do/' + val}),{})
   
   return json({categories, infoboxes, infobox, data, links, text})
 })
