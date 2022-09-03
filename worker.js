@@ -30,7 +30,7 @@ router.get('/:id', withParams, async (req, env) => {
   const article = doc?.json()
   const infoboxes = camelcaseKeys(article?.sections[0]?.infoboxes, { deep: true }) //doc.infoboxes()
   
-  const data = infoboxes?.map(infobox => Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{}))
+  const data = infoboxes?.map(infobox => Object.entries(infobox).reduce((obj,[key,val]) => ({ ...obj, [key]: val.links ? val.links.reduce((acc, val) => ({...acc, [val.text ?? val.page]: 'https://wikis.do/' + val.page}),{}) : val.text }),{})) ?? article
     
   const links = doc?.links().reduce((acc,l) => ({...acc, [l.page()]: 'https://wikis.do/' + l.page()}),{})
   const text = doc?.text()
